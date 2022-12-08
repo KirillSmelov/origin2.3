@@ -10,25 +10,15 @@ struct Address
     unsigned int flat_num = 0;
     unsigned int index = 0;
 };
-void OutputInfo(Address )
+void OutputInfo(Address& p )
 {
-    Address city;
-    std::cin >> city.city;   
-    Address street;
-    std::cin >> street.street;   
-    Address house_num;
-    std::cin >> house_num.house_num;  
-    Address flat_num;
-    std::cin >> flat_num.flat_num;
-    Address index;
-    std::cin >> index.index;
     std::cout << std::endl;
     std::cout << "Информация: " << std::endl;
-    std::cout << "Город: " << city.city << std::endl;
-    std::cout << "Улица: " << street.street << std::endl;
-    std::cout << "Номер дома: " << house_num.house_num << std::endl;
-    std::cout << "Номер кваритры: " << flat_num.flat_num << std::endl;
-    std::cout << "Индекс: " << index.index << std::endl;
+    std::cout << "Город: " << p.city << std::endl;
+    std::cout << "Улица: " << p.street << std::endl;
+    std::cout << "Номер дома: " << p.house_num << std::endl;
+    std::cout << "Номер квартиры: " << p.flat_num << std::endl;
+    std::cout << "индекс: " << p.index << std::endl;
 }
 
 int main(int argc,char** argv)
@@ -36,8 +26,19 @@ int main(int argc,char** argv)
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     setlocale(LC_ALL, "Russian");
-    Address A;
-    OutputInfo(A);
-    OutputInfo(A);
+    Address address1;
+    std::cin >> address1.city;
+    std::cin >> address1.street;
+    std::cin >> address1.house_num;
+    std::cin >> address1.flat_num;
+    std::cin >> address1.index;
+    Address address2;
+    std::cin >> address2.city;
+    std::cin >> address2.street;
+    std::cin >> address2.house_num;
+    std::cin >> address2.flat_num;
+    std::cin >> address2.index;
+    OutputInfo(address1);
+     OutputInfo(address2);
     return 0;
 }
